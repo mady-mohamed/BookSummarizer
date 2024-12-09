@@ -3,9 +3,6 @@ import ollama
 from rich.console import Console
 import streamlit as st
 
-genai.configure(api_key="AIzaSyCQpB9fhuh7egpKettu31cEqlP5SDiIAAw")
-model = genai.GenerativeModel("gemini-1.5-flash")
-
 template = ('''
     "Summarize the following text: {book_content}.
 
@@ -50,18 +47,3 @@ def parse_with_ollama(book_content):
     parsed_content = ''.join(results)
     console.print(parsed_content)
     return parsed_content
-
-
-# def parse_with_genai(book_content):
-#     console = Console()
-#     results = []
-#
-#     for i, chunk in enumerate(book_content):
-#         prompt = template.format(book_content=chunk)
-#         response = model.generate_content(prompt)
-#         results.append(response.text)
-#         print(f"Parsed batch: {i + 1} of {len(book_content)}")
-#
-#     parsed_content = ''.join(results)
-#     console.print(parsed_content)
-#     return parsed_content
