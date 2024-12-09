@@ -5,7 +5,6 @@ ollama pull llama3
 ```
 from terminal run in repo:
 ```
-pip install -q -U google-generativeai
 pip install -r requirements.txt
 ```
 
