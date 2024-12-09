@@ -1,4 +1,3 @@
-import google.generativeai as genai
 import ollama
 from rich.console import Console
 import streamlit as st
