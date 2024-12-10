@@ -2,15 +2,16 @@ import ollama
 from rich.console import Console
 import streamlit as st
 
-template = ('''
+template = (r'''
     "Summarize the following text: {book_content}.
 
-Please provide a summary in the following format:
+Please provide a summary for an academic book in the following format:
 
 Chapter: [Chapter Title (Chapter 1, Chapter 2, Chapter 3, ...)] should always be in this format so that regex split will work r"(Chapter:\s.*?)(?=\nChapter:|\Z)"
-**Key Concepts:** [Key Concept 1, Key Concept 2, ...]
-**Short Description:** [Concise description of the chapter]
-**Summary:** [Detailed summary of the chapter, covering key points and arguments]
+Key Concepts: [Key Concept 1, Key Concept 2, ...]
+Short Description: [Concise description of the chapter]
+Relevant Examples: If there are any relevant examples relating to chapter concepts, briefly mention
+Summary: [Detailed summary of the chapter, covering key points and arguments]
 "
 ''')
 
